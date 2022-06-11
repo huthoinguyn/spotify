@@ -6,20 +6,24 @@ function ListSong() {
   const { DataSongs, handleSetSong, song } = useContext(Songs);
   const [idSong, setidSong] = useState(0);
   const handlePlaySong = (idSong) => {
-    setidSong(idSong)
-    handleSetSong(idSong)
+    setidSong(idSong);
+    handleSetSong(idSong);
   };
   useEffect(() => {
-    setidSong(song.id)
-  }, [song])
+    setidSong(song.id);
+  }, [song]);
   return (
-    <div className="col-span-2 overflow-y-scroll">
-      <table className="table-auto w-full">
+    <div className="col-span-1 md:col-span-2 overflow-y-scroll">
+      <table
+        className="table-auto w-full"
+        cellSpacing="0"
+        cellPadding="0"
+      >
         <thead className="text-white h-12">
           <tr>
             <th className="w-[10%]">#</th>
             <th className="text-left">Title</th>
-            <th className="w-[15%]">Author</th>
+            <th className="w-[10%] md:w-[15%]">Author</th>
             <th className="w-[10%]">
               <FontAwesomeIcon icon={faDownload} />
             </th>
